@@ -1,0 +1,74 @@
+.water-button-contaner{
+    background-color: rgba(0, 0, 0, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    height: 100%;
+}
+.button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -130%);
+    overflow: hidden;
+    width: 200px;
+    height: 70px;
+    background-color: blue;
+    border-radius: 0 0 0.6em 0.6em;
+    margin: 50px 5px;
+    &__text{
+        font-size: 1.2em;
+        display: block;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        color:yellow;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+    }
+    &:hover {
+        transition-delay: 0.02s;
+        border-radius: 0.6em 0.6em 0.6em 0.6em;
+        box-shadow: 0 0 40px rgba(73,115,255,0.6);
+        }
+    &:hover &__wave::after{
+            top:-80%;
+    }  
+    &:hover &__wave::before{
+        top:-80%;
+    } 
+    &__wave{
+        &::after,&::before{
+            content: '';
+            width: 500px;
+            height: 500px;
+            position: absolute;
+            left: 50%;
+            top:0;
+            transition: 0.2s ease-out;
+            transform: translate(-50%,-120%);
+        }
+        &::before{
+            border-radius: 40%;
+            background-color:rgba(0, 0, 0, 0.6);
+            animation: 15s ease 3s spiner infinite;
+        }
+        &::after{
+            background-color:rgba(0, 0, 0, 1);
+            border-radius: 47%;
+            animation: 10s ease 0s spiner infinite;
+        }
+    }   
+}
+
+
+@keyframes spiner {
+    0%{
+        transform: translate(-50%,-93%)rotate(0deg);
+    }
+    100%{
+        transform: translate(-50%,-93%)rotate(360deg);
+    }
+}
