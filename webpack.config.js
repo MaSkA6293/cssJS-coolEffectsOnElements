@@ -69,6 +69,10 @@ const plugins = () => {
             {
                 from: path.resolve(__dirname, 'src/favicon.ico'),
                 to: path.resolve(__dirname, 'dist')
+            },
+            {
+                from: path.resolve(__dirname, 'src/components/FotoMountain/foto/**.*'),
+                to: path.resolve(__dirname, 'dist/assets/fotomountain/[name].[ext]')
             }
         ]),
         new MiniCssExtractPlugin({

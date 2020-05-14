@@ -9,6 +9,7 @@ import { Route, useHistory } from "react-router-dom";
 import WaterButton from '../WaterButton';
 import CSSGrid from '../CSSGrid'
 import RadioButton from '../RadioButton'
+import FotoMountain from '../FotoMountain'
 
 const base = [
     {
@@ -22,6 +23,10 @@ const base = [
     {
         id: 2,
         title: 'Radio button'
+    },
+    {
+        id: 3,
+        title: 'Foto mountain'
     }
 ]
 
@@ -82,6 +87,15 @@ const App = () => {
                     <ContentPanel list={base[activTab]} component={<RadioButton />} />
                 </div>
             </Route>
+            <Route path='/list/3'>
+                <div className='App__left-panel'>
+                    <LeftPanel list={base} />
+                </div>
+                <div className='App__content-panel'>
+                    <ContentPanel list={base[activTab]} component={<FotoMountain />} />
+                </div>
+            </Route>
+
 
 
         </div >
