@@ -20,15 +20,11 @@ const FotoMountain = () => {
     ];
     let count = mountain.length;
     function shuffle(array) {
-        let currentIndex = array.length, temporaryValue, randomIndex;
-        while (0 !== currentIndex) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
         }
-        return array;
+        return array
     }
     function getRandomIntInclusive(min, max) {
         min = Math.ceil(min);
@@ -56,8 +52,7 @@ const FotoMountain = () => {
                 }
                 count = allMontain.length;
                 setmountain([...shuffle(initialmountain)]);
-                console.log(mountain);
-            }, 500)
+            }, 800)
         }
     }
 
