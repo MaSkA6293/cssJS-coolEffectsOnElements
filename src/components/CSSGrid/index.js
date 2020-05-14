@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import './index.scss';
-
+import { debounce } from 'lodash';
 const CSSGrid = () => {
-    const [size, setsize] = useState(100)
-    const handlerChange = (e) => {
-        setsize(e.target.value);
+    const [size, setsize] = useState(100);
+
+    const handlerChange = debounce((value) => {
+
+        setsize(value);
         let grid = document.querySelector('.grid');
-        grid.style.width = `${e.target.value}%`;
+        grid.style.width = `${value}%`;
         let width = grid.style.width.split('%')[0];
         let main = document.querySelector('main');
-        console.log(width)
+        console.log('debounce 200ms', width)
         if (width < 70) {
             main = document.querySelector('main').style.display = 'none';
             grid.style.gridTemplateColumns = "1fr 1fr";
@@ -18,8 +20,8 @@ const CSSGrid = () => {
             main = document.querySelector('main').style.display = 'block';
             grid.style.gridTemplateColumns = "minmax(20%,25%) 1fr minmax(20%,25%);";
         }
+    }, 200)
 
-    }
     return (
         <div className="grid">
             <header className='grid__header'>Header</header>
@@ -40,7 +42,15 @@ const CSSGrid = () => {
             <div className='grid__panel'>
                 <span>Width : {size} %</span>
             </div>
-            <input type='range' min='50' max='100' className='grid__range-input' id='range-grid' defaultValue='100' onChange={handlerChange}></input>
+            <input
+                type='range'
+                min='50'
+                max='100'
+                className='grid__range-input'
+                id='range-grid'
+                defaultValue='100'
+                onChange={(e) => handlerChange(e.target.value)}
+            />
             <label className='grid__label-input-range' htmlFor='range-grid'>Change size</label>
             <div className='grid__imageBlock imageBlock'>
                 <div className='imageBlock__item1'>1</div>

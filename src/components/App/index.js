@@ -10,7 +10,7 @@ import WaterButton from '../WaterButton';
 import CSSGrid from '../CSSGrid'
 import RadioButton from '../RadioButton'
 import FotoMountain from '../FotoMountain'
-
+import SearchButton from '../SearchButton'
 const base = [
     {
         id: 0,
@@ -27,6 +27,10 @@ const base = [
     {
         id: 3,
         title: 'Foto mountain'
+    },
+    {
+        id: 4,
+        title: 'Search button'
     }
 ]
 
@@ -93,6 +97,14 @@ const App = () => {
                 </div>
                 <div className='App__content-panel'>
                     <ContentPanel list={base[activTab]} component={<FotoMountain />} />
+                </div>
+            </Route>
+            <Route path='/list/4'>
+                <div className='App__left-panel'>
+                    <LeftPanel list={base} />
+                </div>
+                <div className='App__content-panel'>
+                    <ContentPanel list={base[activTab]} component={<SearchButton />} />
                 </div>
             </Route>
 
