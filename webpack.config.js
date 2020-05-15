@@ -130,11 +130,13 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
     },
+    devtool: isDev ? 'source-map' : '',
 
     devServer: {
         port: 4200,
         hot: isDev,
-        historyApiFallback: true
+        historyApiFallback: true,
+
     },
     optimization: optimization(),
     plugins: plugins(),
@@ -164,7 +166,11 @@ module.exports = {
                     loader: 'babel-loader',
                     options: babelOptions('@babel/preset-react')
                 }
-            }
+            },
+            {
+                test: /\.(ttf|woff|woff2|eot)$/,
+                use: ['file-loader']
+            },
 
         ],
     }

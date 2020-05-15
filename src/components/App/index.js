@@ -7,10 +7,11 @@ import LeftPanel from '../LeftPanel'
 
 import { Route, useHistory } from "react-router-dom";
 import WaterButton from '../WaterButton';
-import CSSGrid from '../CSSGrid'
-import RadioButton from '../RadioButton'
-import FotoMountain from '../FotoMountain'
-import SearchButton from '../SearchButton'
+import CSSGrid from '../CSSGrid';
+import RadioButton from '../RadioButton';
+import FotoMountain from '../FotoMountain';
+import SearchButton from '../SearchButton';
+import AnimationButton from '../AnimationButton';
 const base = [
     {
         id: 0,
@@ -31,7 +32,11 @@ const base = [
     {
         id: 4,
         title: 'Search button'
-    }
+    },
+    {
+        id: 5,
+        title: 'Animation button'
+    },
 ]
 
 const App = () => {
@@ -105,6 +110,14 @@ const App = () => {
                 </div>
                 <div className='App__content-panel'>
                     <ContentPanel list={base[activTab]} component={<SearchButton />} />
+                </div>
+            </Route>
+            <Route path='/list/5'>
+                <div className='App__left-panel'>
+                    <LeftPanel list={base} />
+                </div>
+                <div className='App__content-panel'>
+                    <ContentPanel list={base[activTab]} component={<AnimationButton />} />
                 </div>
             </Route>
 
