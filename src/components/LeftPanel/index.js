@@ -1,14 +1,14 @@
 import React from 'react';
 import './index.scss';
 import { useHistory } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 
 const LeftPanel = ({ list }) => {
     let history = useHistory();
     return (
         <div className='leftPanel'>
             <div className='leftPanel__title'>
-                <h2>Меню</h2>
+                <h2>Skills</h2>
             </div>
             <div className='leftPanel__list'>
                 <ul className='leftPanel__nav nav'>
@@ -21,5 +21,9 @@ const LeftPanel = ({ list }) => {
             </div>
         </div>
     )
+}
+
+LeftPanel.propTypes = {
+    list: PropTypes.array
 }
 export default LeftPanel

@@ -16,9 +16,9 @@ const ContentPanel = ({ list, component }) => {
         </Fragment>
     )
 }
-ContentPanel.PropTypes = {
+ContentPanel.propTypes = {
     list: PropTypes.object,
-    component: PropTypes.elementType
+    component: PropTypes.node
 }
 
 export default ContentPanel
