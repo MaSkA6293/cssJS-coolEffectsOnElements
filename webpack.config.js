@@ -23,7 +23,7 @@ const cssLoaders = extra => {
             loader: MiniCssExtractPlugin.loader,
             options: {
                 hmr: isDev,
-                reloadAll: true
+                reloadAll: true,
             },
         },
         'css-loader',
@@ -77,7 +77,7 @@ const plugins = () => {
         ]),
         new MiniCssExtractPlugin({
             filename: filename('css')
-        })
+        }),
     ]
 
     if (isProd) {
@@ -130,6 +130,11 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/',
     },
+    resolve: {
+        alias: {
+            images: path.resolve(__dirname, 'RotateCard/'),
+        }
+    },
     devtool: isDev ? 'source-map' : '',
 
     devServer: {
@@ -151,8 +156,11 @@ module.exports = {
                 use: cssLoaders('sass-loader'),
             },
             {
-                test: /\.(png|jpg|svg|gif)$/,
-                use: ['file-loader']
+                test: /\.(png|jpg|svg|gif)$/i,
+                use: [
+                    'file-loader',
+                    'webp-loader'
+                ],
             },
             {
                 test: /\.js$/,

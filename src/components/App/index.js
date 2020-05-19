@@ -12,6 +12,7 @@ import RadioButton from '../RadioButton';
 import FotoMountain from '../FotoMountain';
 import SearchButton from '../SearchButton';
 import AnimationButton from '../AnimationButton';
+import RotateCard from '../RotateCard';
 const base = [
     {
         id: 0,
@@ -36,6 +37,10 @@ const base = [
     {
         id: 5,
         title: 'Animation button'
+    },
+    {
+        id: 6,
+        title: 'Rotate card'
     },
 ]
 
@@ -118,6 +123,14 @@ const App = () => {
                 </div>
                 <div className='App__content-panel'>
                     <ContentPanel list={base[activTab]} component={<AnimationButton />} />
+                </div>
+            </Route>
+            <Route path='/list/6'>
+                <div className='App__left-panel'>
+                    <LeftPanel list={base} />
+                </div>
+                <div className='App__content-panel'>
+                    <ContentPanel list={base[activTab]} component={<RotateCard />} />
                 </div>
             </Route>
 
