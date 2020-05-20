@@ -1,102 +1,91 @@
 @font-face {
-	font-family: 'Conv_SourceSansPro-Bold';
-	src: url('fonts/SourceSansPro-Bold.eot');
-    src: local('☺'), url('./fonts/SourceSansPro-Bold.woff') format('woff'), 
-    url('./fonts/SourceSansPro-Bold.ttf') format('truetype'), 
-    url('./fonts/SourceSansPro-Bold.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: "Conv_SourceSansPro-Bold";
+  src: url("fonts/SourceSansPro-Bold.eot");
+  src: local("☺"), url("./fonts/SourceSansPro-Bold.woff") format("woff"),
+    url("./fonts/SourceSansPro-Bold.ttf") format("truetype"),
+    url("./fonts/SourceSansPro-Bold.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-
-.rotate-card-contaner{
-    background-image: linear-gradient(45deg, #d8c5ff73, #709cff);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    .card{
-        display: block;
-        width: 250px;
-        height: 320px;
-        position: relative;
-        cursor: pointer;
-        .face-card,.back-card{
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            display: block;
-            border-radius: 10px;
-            transition: transform .5s ease;
-            backface-visibility: hidden;
-
-            box-shadow: inset 2px 2px 29px #010102;
-   
-        }
-        .face-card {
-            background-size: cover;
-            background-image: url('./face.jpg');     
-            background-position: center;   
-            transform: perspective(1000px) rotateY(0);
-           
-            
-        }
-        .back-card{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-size: 2rem;
-            font-weight: bold;
-            background-image: linear-gradient(45deg, #d62f2f, #314780);
-            transform: perspective(1000px) rotateY(180deg);
-            h1 {
-
-                font-family: 'Conv_SourceSansPro-Bold';
-                color: #fffdfd;
-                text-shadow: 2px 2px 22px #ce0101;
-            }
-            span{
-                padding-top: 15px;
-                font-size: 1.3rem;
-                color: #a8b8d4;
-            }
-            ul{
-                padding: 0;
-            }
-            .socials{
-                list-style: none;
-                display: flex;
-                justify-content: space-between;
-                margin-top: 20px;
-                width: 70%;
-                   a {
-                   display: flex;
-                   width: 40px;
-                   height: 40px;
-                   justify-content: center;
-                   align-items: center;
-                   color: black;
-                   border-radius: 50%;
-                   font-size: 1.8rem;
-                   transition: .3s ease;
-                   &:hover{
-                    background-color: #13132c;
-                    color: #ffe2ab;
-                   }
-                }
-            }
-           
-
-        }
-        &:hover .face-card{
-            transform:  perspective(1000px) rotateY(-180deg);
-        }
-        &:hover .back-card{
-            transform:  perspective(1000px) rotateY(0);
-        }
+.rotate-card-contaner {
+  background-image: linear-gradient(45deg, #d8c5ff73, #709cff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .card {
+    width: 250px;
+    height: 320px;
+    position: relative;
+    cursor: pointer;
+    &__face,
+    &__back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+      backface-visibility: hidden;
+      box-shadow: inset 2px 2px 29px #010102;
     }
-    
+    &__face {
+      background-size: cover;
+      background-image: url("./face.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      transform: perspective(1000px) rotateY(0);
+    }
+    &__back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 2rem;
+      background-image: linear-gradient(45deg, #d62f2f, #314780);
+      transform: perspective(1000px) rotateY(180deg);
+      h1 {
+        font-family: "Conv_SourceSansPro-Bold";
+        color: #fffdfd;
+        text-shadow: 2px 2px 22px #ce0101;
+      }
+      span {
+        padding-top: 15px;
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #a8b8d4;
+      }
+      ul {
+        padding: 0;
+      }
+      .socials {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        width: 70%;
+        a {
+          display: flex;
+          width: 40px;
+          height: 40px;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          border-radius: 50%;
+          font-size: 1.8rem;
+          transition: 0.3s ease;
+          &:hover {
+            background-color: #13132c;
+            color: #ffe2ab;
+          }
+        }
+      }
+    }
+    &:hover .card__face {
+      transform: perspective(1000px) rotateY(-180deg);
+    }
+    &:hover .card__back {
+      transform: perspective(1000px) rotateY(0);
+    }
+  }
 }
-

@@ -1,130 +1,148 @@
 @font-face {
-	font-family: 'Conv_Montserrat-Regular';
-	src: url('./fonts/Montserrat-Regular.eot');
-    src: local('☺'), 
-    url('./fonts/Montserrat-Regular.woff') format('woff'), 
-    url('./fonts/Montserrat-Regular.ttf') format('truetype'), 
-    url('./fonts/Montserrat-Regular.svg') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: "Conv_Montserrat-Regular";
+  src: url("./fonts/Montserrat-Regular.eot");
+  src: local("☺"), url("./fonts/Montserrat-Regular.woff") format("woff"),
+    url("./fonts/Montserrat-Regular.ttf") format("truetype"),
+    url("./fonts/Montserrat-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-$firstcolor:#42204d;
-$secondcolor:#63e1ff;
-$bordersize:3px;
-.animation-button-contaner{
-    background-image: linear-gradient(45deg, #8900c1, #300033);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+$firstcolor: #42204d;
+$secondcolor: #63e1ff;
+$bordersize: 3px;
+.animation-button-contaner {
+  background-image: linear-gradient(45deg, #8900c1, #300033);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  height: 100%;
+  &__button {
+    overflow: hidden;
+    font-family: "Conv_Montserrat-Regular", sans-serif;
+    display: block;
     position: relative;
-    height: 100%;
-    &__button{
-        overflow: hidden;
-        font-family: 'Conv_Montserrat-Regular',sans-serif ;
-        display: block;
-        position: relative;
-        padding: 3%;
-        font-size: 4em;
-        text-transform: uppercase;    
-        text-shadow: 0px 0px 5px #000;
-        font-weight: bold;
-        border: none;
-        background-color: transparent;
-        color:$secondcolor;
-        letter-spacing: 5px;
-        box-shadow: 0 20px 40px #000000d9;
-        outline: none;
-        cursor: pointer;
-        &::before{
-            content: '';
-            position: absolute;
-            top: $bordersize;
-            left: $bordersize;
-            bottom: $bordersize;
-            width: 50%;
-            background-color: rgba(255,255,255,0.1);
-        }
-        span:nth-child(1){
-            position: absolute;
-            top:0;
-            left: 0;
-            width: 100%;
-            height: $bordersize;
-            background-image: linear-gradient(90deg,$firstcolor,$secondcolor,$firstcolor);
-            animation: topblick 3s infinite paused;
-            transform: translateX(-100%);
-        }
-        span:nth-child(2){
-            position: absolute;
-            top:0;
-            left: 0;
-            height: 100%;
-            width: $bordersize;
-            background-image: linear-gradient(180deg,$firstcolor,$secondcolor,$firstcolor);
-            animation: leftblick 3s infinite paused;
-            transform: translateY(-100%);
-        }
-        span:nth-child(3){
-            position: absolute;
-            bottom:0;
-            left: 0;
-            width: 100%;
-            height: $bordersize;
-            background-image: linear-gradient(90deg,$firstcolor,$secondcolor,$firstcolor);
-            animation: bottomblick 3s infinite paused;
-            transform: translateX(100%);
-        }
-        span:nth-child(4){
-            position: absolute;
-            top:0;
-            right: 0;
-            height: 100%;
-            width: $bordersize;
-            background-image: linear-gradient(180deg,$firstcolor,$secondcolor,$firstcolor);
-            animation: rightblick 3s infinite paused;
-            transform: translateY(100%);
-        }
-    &:hover{
-        span{
-            animation-play-state:running;
-        }
-       
+    padding: 3%;
+    font-size: 4em;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 5px #000;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+    color: $secondcolor;
+    letter-spacing: 5px;
+    box-shadow: 0 20px 40px #000000d9;
+    outline: none;
+    cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      top: $bordersize;
+      left: $bordersize;
+      bottom: $bordersize;
+      width: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
     }
+    span:nth-child(1) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $bordersize;
+      background-image: linear-gradient(
+        90deg,
+        $firstcolor,
+        $secondcolor,
+        $firstcolor
+      );
+      animation: topblick 3s infinite paused;
+      transform: translateX(-100%);
     }
+    span:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: $bordersize;
+      background-image: linear-gradient(
+        180deg,
+        $firstcolor,
+        $secondcolor,
+        $firstcolor
+      );
+      animation: leftblick 3s infinite paused;
+      transform: translateY(-100%);
+    }
+    span:nth-child(3) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: $bordersize;
+      background-image: linear-gradient(
+        90deg,
+        $firstcolor,
+        $secondcolor,
+        $firstcolor
+      );
+      animation: bottomblick 3s infinite paused;
+      transform: translateX(100%);
+    }
+    span:nth-child(4) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: $bordersize;
+      background-image: linear-gradient(
+        180deg,
+        $firstcolor,
+        $secondcolor,
+        $firstcolor
+      );
+      animation: rightblick 3s infinite paused;
+      transform: translateY(100%);
+    }
+    &:hover {
+      span {
+        animation-play-state: running;
+      }
+    }
+  }
 }
 
 @keyframes topblick {
-    0%{
-        transform: translateX(-100%);
-    }
-    100%{
-        transform: translateX(100%);
-    }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
 }
 
 @keyframes bottomblick {
-    0%{
-        transform: translateX(100%);
-    }
-    100%{
-        transform: translateX(-100%);
-    }
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes leftblick {
-    0%{
-        transform: translateY(100%);
-    }
-    100%{
-        transform: translateY(-100%);
-    }
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 @keyframes rightblick {
-    0%{
-        transform: translateY(-100%);
-    }
-    100%{
-        transform: translateY(100%);
-    }
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }

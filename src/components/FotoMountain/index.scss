@@ -1,15 +1,15 @@
-.fotoMountain-contaner{
+.fotoMountain-contaner {
   display: block;
   position: absolute;
-  top:50%;
+  top: 50%;
   left: 50%;
   width: 60%;
   height: 50%;
   transform: translate3d(-50%, -50%, 0);
   border-radius: 5px;
   background-image: linear-gradient(45deg, #c1454569, #3fe63f85);
-  .mountain{
-    &__item{
+  .mountain {
+    &__item {
       position: absolute;
       background-position: center;
       background-size: cover;
@@ -19,11 +19,11 @@
       transition: all 1s ease;
       border: 2px solid black;
       border-radius: 5px;
-      &_go-right{
-        transform: translate3d(600px,0,0)rotate(-180deg)!important;
+      &_go-right {
+        transform: translate3d(600px, 0, 0) rotate(-180deg) !important;
       }
-      &_go-left{
-        transform: translate3d(-900px,0,0)rotate(180deg)!important;
+      &_go-left {
+        transform: translate3d(-900px, 0, 0) rotate(180deg) !important;
       }
     }
   }
@@ -32,9 +32,9 @@
 .lds-roller {
   display: inline-block;
   position: absolute;
-  left:50%;
-  top:50%;
-  transform: translate3d(-50%,-50%,0);
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
   width: 80px;
   height: 80px;
 }
@@ -49,7 +49,7 @@
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background:blue;
+  background: blue;
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {

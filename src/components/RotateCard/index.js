@@ -4,13 +4,12 @@ import { faGithub, faVk, faInstagram, faLinkedin } from '@fortawesome/free-brand
 
 import './index.scss';
 
-
 const RotateCard = () => {
     return (
         <div className="rotate-card-contaner">
             <div className='card'>
-                <div className='face-card'></div>
-                <div className='back-card'>
+                <div className='card__face'></div>
+                <div className='card__back'>
                     <h1>Oleg Shkalikov</h1>
                     <span>Front-end Developer</span>
                     <ul className='socials'>
