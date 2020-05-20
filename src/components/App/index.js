@@ -14,6 +14,7 @@ import SearchButton from "../SearchButton";
 import AnimationButton from "../AnimationButton";
 import RotateCard from "../RotateCard";
 import NeonButton from "../NeonButton";
+import SocialButtons from "../SocialButtons";
 const base = [
   {
     id: 0,
@@ -46,6 +47,10 @@ const base = [
   {
     id: 7,
     title: "Neon button",
+  },
+  {
+    id: 8,
+    title: "Social buttons",
   },
 ];
 
@@ -141,6 +146,14 @@ const App = () => {
         </div>
         <div className="App__content-panel">
           <ContentPanel list={base[activTab]} component={<NeonButton />} />
+        </div>
+      </Route>
+      <Route path="/list/8">
+        <div className="App__left-panel">
+          <LeftPanel list={base} />
+        </div>
+        <div className="App__content-panel">
+          <ContentPanel list={base[activTab]} component={<SocialButtons />} />
         </div>
       </Route>
     </div>
