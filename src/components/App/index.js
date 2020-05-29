@@ -15,45 +15,9 @@ import AnimationButton from "../AnimationButton";
 import RotateCard from "../RotateCard";
 import NeonButton from "../NeonButton";
 import SocialButtons from "../SocialButtons";
-const base = [
-  {
-    id: 0,
-    title: "Water button",
-  },
-  {
-    id: 1,
-    title: "CSS Grid",
-  },
-  {
-    id: 2,
-    title: "Radio button",
-  },
-  {
-    id: 3,
-    title: "Foto mountain",
-  },
-  {
-    id: 4,
-    title: "Search button",
-  },
-  {
-    id: 5,
-    title: "Animation button",
-  },
-  {
-    id: 6,
-    title: "Rotate card",
-  },
-  {
-    id: 7,
-    title: "Neon button",
-  },
-  {
-    id: 8,
-    title: "Social buttons",
-  },
-];
-
+import OriginalCards from "../OriginalCards";
+import baseMySkills from "./base";
+import ImageHowerEffect from "../ImageHowerEffect";
 const App = () => {
   const [activTab, setactivTab] = useState(0);
   let history = useHistory();
@@ -61,7 +25,7 @@ const App = () => {
   useEffect(() => {
     const id = history.location.pathname.split("list/")[1];
     if (id) {
-      let elem = base.find((item) => item.id === Number(id));
+      let elem = baseMySkills.find((item) => item.id === Number(id));
       if (!elem) {
         history.push("/");
         setactivTab(0);
@@ -75,85 +39,134 @@ const App = () => {
     <div className="App">
       <Route exact path="/">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<WaterButton />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<WaterButton />}
+          />
         </div>
       </Route>
 
       <Route path="/list/0">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<WaterButton />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<WaterButton />}
+          />
         </div>
       </Route>
 
       <Route path="/list/1">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<CSSGrid />} />
+          <ContentPanel list={baseMySkills[activTab]} component={<CSSGrid />} />
         </div>
       </Route>
 
       <Route path="/list/2">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<RadioButton />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<RadioButton />}
+          />
         </div>
       </Route>
       <Route path="/list/3">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<FotoMountain />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<FotoMountain />}
+          />
         </div>
       </Route>
       <Route path="/list/4">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<SearchButton />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<SearchButton />}
+          />
         </div>
       </Route>
       <Route path="/list/5">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<AnimationButton />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<AnimationButton />}
+          />
         </div>
       </Route>
       <Route path="/list/6">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<RotateCard />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<RotateCard />}
+          />
         </div>
       </Route>
       <Route path="/list/7">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<NeonButton />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<NeonButton />}
+          />
         </div>
       </Route>
       <Route path="/list/8">
         <div className="App__left-panel">
-          <LeftPanel list={base} />
+          <LeftPanel list={baseMySkills} />
         </div>
         <div className="App__content-panel">
-          <ContentPanel list={base[activTab]} component={<SocialButtons />} />
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<SocialButtons />}
+          />
+        </div>
+      </Route>
+      <Route path="/list/9">
+        <div className="App__left-panel">
+          <LeftPanel list={baseMySkills} />
+        </div>
+        <div className="App__content-panel">
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<OriginalCards />}
+          />
+        </div>
+      </Route>
+      <Route path="/list/10">
+        <div className="App__left-panel">
+          <LeftPanel list={baseMySkills} />
+        </div>
+        <div className="App__content-panel">
+          <ContentPanel
+            list={baseMySkills[activTab]}
+            component={<ImageHowerEffect />}
+          />
         </div>
       </Route>
     </div>

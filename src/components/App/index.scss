@@ -25,6 +25,7 @@
   &__content-panel {
     display: flex;
     flex: 75%;
+    max-width: 75%;
     flex-direction: column;
     background-image: radial-gradient(#f1f1f35c 50%, 79%, #babedd3b 90%);
   }
